@@ -1,0 +1,11 @@
+1- Instalar Python
+2- Instalar virtualenv, ejecutar el siguiente comando en la terminal
+  pip install virtualenv
+3- Nos dirigimos la carpeta del proyecto y creamos nuestro entorno virtual
+  virtualenv venv
+4- Activamos el entorno virtual
+  . venv/Scripts/activate
+5- Instalamos los requerimientos
+  pip install -r requirements.txt
+6- Ejecutamos el proyecto
+  python manage.py runserver
