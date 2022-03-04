@@ -1,0 +1,119 @@
+header {
+  width: 100%;
+  height: 100%;
+  background-color: #0a2e47;
+  display: flex;
+  justify-content: space-between;
+}
+
+header > div {
+  width: 100%;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin: 10px 10px 10px 40px;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+nav > ul {
+  margin-right: 40px;
+}
+
+nav > ul > li {
+  display: inline;
+  margin-left: 10px;
+}
+
+nav > a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+nav > a:hover {
+  color: #8998ac;
+}
+
+li {
+  display: inline;
+  margin-left: 10px;
+}
+
+li a {
+  color: #f0f0f0;
+  text-decoration: none;
+}
+
+li a:hover {
+  color: #8998ac;
+}
+
+.contenedor-logo li a{
+    
+    font-size: 50px;
+}
+
+.page {
+    padding-top: 16px;
+    padding-bottom: 16px
+}
+
+.page .breadcrumb {
+    background-color: #fff;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1)
+}
+
+.page .breadcrumb .breadcrumb-item a {
+    text-decoration: none;
+    color: #0b2f47 !important
+}
+
+.page .panel {
+    background-color: #fff;
+    border-radius: 6px;
+    border-bottom: 2px solid #0b2f47;
+    width: 100%
+}
+
+.page .panel .header {
+    border-bottom: 1px solid #e8e8e8
+}
+
+.page .panel .header h2.title {
+    display: inline-block;
+    color: #0b2f47;
+    font-size: 1.1em;
+    padding: 12px 12px
+}
+
+.page .panel .inside {
+    padding: 16px
+}
+
+.requiredField {
+  margin-top: 16px !important;
+}
+
+.mtop16 {
+  margin-top: 16px
+}
+
+.btn-success {
+  background-color: #0b2f47 !important;
+  border: 0 !important;
+  width: 100%;
+  outline: none;
+  box-shadow: none
+}
+
+.wrapper {
+  min-height: 100vh;
+  overflow: hidden
+}

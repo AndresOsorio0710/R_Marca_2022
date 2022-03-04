@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/932dd1f875.js" crossorigin="anonymous"></script>
+    <title>Marca</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'tienda_app/css/tienda.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+    <header>
+        <div class="row">
+            <div class="col-md-4 contenedor-logo">
+                <img src="{% static 'tienda_app/img/logoMarcaSm.png' %}" alt="logo" class="logo">
+                <li><a href="{% url 'tienda_inicio' %}">Marca</a></li>
+            </div>
+            <div class="col-md-8">
+                <nav id="nav">
+                    <ul>
+                        <li><a href="{% url 'tienda_inicio' %}">Inicio</a></li>
+                        <li><a href="{% url 'tienda_producto' %}">Productos</a></li>
+                        <li><a href="{% url 'tienda_informacion' %}">Informacion</a></li>
+                        <li><a href="{% url 'tienda_contacto' %}">Contactanos</a></li>
+                        {% if user.is_authenticated %}
+                        {% if perms.tienda_app.add_bodega %}
+                        <li><a href="{% url 'admin_inicio' %}">Administracion</a></li>
+                        {% endif %}
+                        <li><a href="{% url 'logout' %}">Cerrar secion</a></li>
+                        <li><a href="#">@{{ user.username }}</a></li>
+                        {% else %}
+                        <li><a href="{% url 'registro' %}">Registrarce</a></li>
+                        <li><a href="{% url 'login' %}">Ingresar</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="wrapper">
+        <div class="page">
+            <div class="container-fluid">
+                {% block contenedor %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {% if messages %}
+    {% for message in messages %}
+    <script>
+        Swal.fire({
+            "title": "Ok",
+            "text": "{{message}}",
+            "icon": "success"
+        })
+    </script>
+    {% endfor %}
+    {% endif %}
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>

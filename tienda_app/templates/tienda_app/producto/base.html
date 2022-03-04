@@ -1,0 +1,28 @@
+{% extends 'tienda_app/base.html' %}
+{% load humanize %}
+{% load static %}
+{% block contenedor %}
+<div class="panel shadow">
+    <div class="header">
+        <h2 class="title">Productos</h2>
+    </div>
+    <div class="row inside">
+        {% for producto in productos %}
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    {% if producto.imagen %}
+                    <img src="{{ producto.imagen.imagen.url }}" class="card-img-top" alt="..." height="254">
+                    {% endif %}
+                </div>
+                <div class="card-body">
+                    <h5>{{producto.nombre}}</h5>
+                    <h5>${{producto.precio | intcomma}}</h5>
+                    <p>{{producto.descripcion}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
